@@ -1,5 +1,5 @@
 {
-    "name": "jsamuels/wordpress-plugin-template",
+    "name": "josephsamuels/wordpress-plugin-template",
     "description": "Template for a Wordpress plugin.",
     "type": "wordpress-plugin",
     "require": {}
