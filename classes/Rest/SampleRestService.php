@@ -1,6 +1,5 @@
 <?php
 
-
 namespace WordpressPluginTemplate\Rest;
 
 use WpNative;
@@ -13,10 +12,10 @@ class SampleRestService
 
   public function initialize()
   {
-    WpNative\wp_register_rest_route('sample-rest-service/api', '/', [
+    WpNative\wp_register_rest_route('sample-rest-service/v1', '/test', [
       'methods'             => 'GET',
       'callback'            => function () {
-        return WpNative\wp_get_rest_response('Ok');
+        return WpNative\wp_get_rest_response(['response' => 'Ok']);
       },
       'permission_callback' => function () {
         return true;

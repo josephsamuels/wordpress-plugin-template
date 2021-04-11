@@ -16,8 +16,10 @@ return [
   'finders'                    => [
     Finder::create()
       ->files()
-      ->notName('/.*\\.zip|.*.inc.php')
-      ->in('src'),
+      ->in('classes'),
+    Finder::create()
+      ->files()
+      ->in('helpers'),
     Finder::create()
       ->files()
       ->name(['wordpress-plugin-template.php'])

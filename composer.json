@@ -8,10 +8,10 @@
   },
   "autoload": {
     "psr-4": {
-      "WordpressPluginTemplate\\": "src/"
+      "WordpressPluginTemplate\\": "classes/"
     },
     "files": [
-      "src/WpNative.php"
+      "helpers/WpNative.php"
     ]
   }
 }
