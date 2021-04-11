@@ -2,6 +2,7 @@
 
 namespace WordpressPluginTemplate;
 
+use WordpressPluginTemplate\Rest\SampleRestService;
 use WpNative;
 
 class Plugin
@@ -12,7 +13,7 @@ class Plugin
 
   public function initialize()
   {
-
+    WpNative\wp_add_action('rest_api_init', [SampleRestService::getInstance(), 'initialize']);
   }
 
   public function activate()

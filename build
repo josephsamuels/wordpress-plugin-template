@@ -2,5 +2,4 @@
 
 rm -f wordpress-plugin-template.zip
 php-scoper add-prefix --output-dir=builds --force
-( cd builds && composer dump-autoload && zip -r ../wordpress-plugin-template.zip ./* )
-#( cd builds && composer dump-autoload && rm composer.* && zip -r ../wordpress-plugin-template.zip ./* )
+( cd builds && composer dump-autoload && rm composer.* && zip -r ../wordpress-plugin-template.zip ./* )
