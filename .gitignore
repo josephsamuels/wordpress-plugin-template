@@ -5,6 +5,10 @@
 # Composer
 /vendor
 
-# Builds
+# NodeJS
+/node_modules
+
+# Build output
 /builds
+/public
 *.zip

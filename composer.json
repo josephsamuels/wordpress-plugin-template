@@ -2,16 +2,17 @@
   "name": "josephsamuels/wordpress-plugin-template",
   "description": "Template for a Wordpress plugin.",
   "type": "wordpress-plugin",
-  "require": {},
-  "require-dev": {
-    "symfony/finder": "^5.2"
+  "require": {
+    "php": "~7.3",
+    "ext-json": "^1.7"
   },
+  "require-dev": {},
   "autoload": {
     "psr-4": {
-      "WordpressPluginTemplate\\": "classes/"
+      "WordpressPluginTemplate\\": "inc/classes/"
     },
     "files": [
-      "helpers/WpNative.php"
+      "inc/helpers/WpNative.php"
     ]
   }
 }

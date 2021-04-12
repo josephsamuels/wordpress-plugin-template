@@ -1,5 +1,7 @@
 #!/bin/bash
 
-rm -f wordpress-plugin-template.zip
+rm -rf builds/
 php-scoper add-prefix --output-dir=builds --force
-( cd builds && composer dump-autoload && rm composer.* && zip -r ../wordpress-plugin-template.zip ./* )
+npm run build
+cp -r public builds/public
+( cd builds && composer dumpautoload && rm composer.* && zip -r wordpress-plugin-template.zip ./* )
