@@ -2,9 +2,6 @@
 
 namespace WordpressPluginTemplate\Rest;
 
-use WordpressPluginTemplate\Manifest;
-use WpNative;
-
 class SampleRestService
 {
   private function __construct()
@@ -13,10 +10,10 @@ class SampleRestService
 
   public function initialize()
   {
-    register_rest_route('sample-rest-service/v1', '/test', [
+    register_rest_route(WPPT_SLUG . '/v1', '/test', [
       'methods'             => 'GET',
       'callback'            => function () {
-        return WpNative\wp_get_rest_response(WPPT_PLUGIN_URL . Manifest::getInstance()->getManifest()['admin.js']);
+        return new \WP_REST_Response('REST Works!');
       },
       'permission_callback' => function () {
         return true;
@@ -24,7 +21,7 @@ class SampleRestService
     ]);
   }
 
-  public static function getInstance(): SampleRestService
+  public static function get_instance(): SampleRestService
   {
     return new SampleRestService();
   }

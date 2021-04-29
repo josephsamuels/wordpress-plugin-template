@@ -10,9 +10,6 @@
   "autoload": {
     "psr-4": {
       "WordpressPluginTemplate\\": "inc/classes/"
-    },
-    "files": [
-      "inc/helpers/WpNative.php"
-    ]
+    }
   }
 }

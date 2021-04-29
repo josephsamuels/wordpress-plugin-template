@@ -5,7 +5,7 @@ declare(strict_types=1);
 use Isolated\Symfony\Component\Finder\Finder;
 
 return [
-  'prefix'                     => 'WPPT',
+  'prefix'                     => 'PSPT',
   'finders'                    => [
     Finder::create()
       ->files()
@@ -30,12 +30,11 @@ return [
     ]),
   ],
   'files-whitelist'            => [
-    'inc/helpers/WpNative.php',
     './index.php'
   ],
   'whitelist'                  => [
     'WordpressPluginTemplate\*',
-    'WpNative\*'
+    '\*'
   ],
   'whitelist-global-constants' => true,
   'whitelist-global-classes'   => true,

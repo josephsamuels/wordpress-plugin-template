@@ -20,12 +20,15 @@ if (file_exists(dirname(__FILE__) . '/vendor/scoper-autoload.php')) {
   require_once dirname(__FILE__) . '/vendor/autoload.php';
 }
 
-define('WPPT_PLUGIN_FILE', __FILE__);
+/**
+ * TODO - Set plugin slug.
+ */
+define('WPPT_SLUG', 'wordpress-plugin-template');
 define('WPPT_PLUGIN_PATH', dirname(__FILE__));
 define('WPPT_PLUGIN_URL', plugin_dir_url(__FILE__));
 
-register_activation_hook(__FILE__, [Plugin::getInstance(), 'activate']);
-register_deactivation_hook(__FILE__, [Plugin::getInstance(), 'deactivate']);
+register_activation_hook(__FILE__, [Plugin::get_instance(), 'activate']);
+register_deactivation_hook(__FILE__, [Plugin::get_instance(), 'deactivate']);
 register_uninstall_hook(__FILE__, [Plugin::class, 'uninstall']);
 
-add_action('init', [Plugin::getInstance(), 'initialize']);
+add_action('init', [Plugin::get_instance(), 'initialize']);

@@ -12,15 +12,19 @@ class Plugin
 
   public function initialize()
   {
-    add_action('rest_api_init', [SampleRestService::getInstance(), 'initialize']);
+    /**
+     * TODO - Add any additional initialization code here.
+     */
+
+    add_action('rest_api_init', [SampleRestService::get_instance(), 'initialize']);
 
     add_action('admin_enqueue_scripts', function () {
-      wp_register_script('wppt_admin_script', WPPT_PLUGIN_URL . Manifest::getInstance()->getManifest()['admin.js']);
+      wp_register_script('wppt_admin_script', WPPT_PLUGIN_URL . Manifest::get_instance()->get_manifest()['admin.js']);
       wp_enqueue_script('wppt_admin_script');
     });
 
     add_action('wp_enqueue_scripts', function () {
-      wp_register_script('wppt_frontend_script', WPPT_PLUGIN_URL . Manifest::getInstance()->getManifest()['frontend.js']);
+      wp_register_script('wppt_frontend_script', WPPT_PLUGIN_URL . Manifest::get_instance()->get_manifest()['frontend.js']);
       wp_enqueue_script('wppt_frontend_script');
     });
   }
@@ -40,7 +44,7 @@ class Plugin
 
   }
 
-  public static function getInstance(): Plugin
+  public static function get_instance(): Plugin
   {
     return new Plugin();
   }
