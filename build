@@ -1,7 +1,12 @@
 #!/bin/bash
 
 rm -rf builds/
+rm -rf public/assets
+
 php-scoper add-prefix --output-dir=builds --force
+
 npm run build
+
 cp -r public builds/public
+
 ( cd builds && composer dumpautoload && rm composer.* && zip -r wordpress-plugin-template.zip ./* )

@@ -29,6 +29,5 @@ define('WPPT_PLUGIN_URL', plugin_dir_url(__FILE__));
 
 register_activation_hook(__FILE__, [Plugin::get_instance(), 'activate']);
 register_deactivation_hook(__FILE__, [Plugin::get_instance(), 'deactivate']);
-register_uninstall_hook(__FILE__, [Plugin::class, 'uninstall']);
 
 add_action('init', [Plugin::get_instance(), 'initialize']);

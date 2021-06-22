@@ -39,11 +39,6 @@ class Plugin
 
   }
 
-  public static function uninstall()
-  {
-
-  }
-
   public static function get_instance(): Plugin
   {
     return new Plugin();

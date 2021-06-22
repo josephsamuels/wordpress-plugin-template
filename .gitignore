@@ -10,5 +10,5 @@
 
 # Build output
 /builds
-/public
+/public/assets
 *.zip
