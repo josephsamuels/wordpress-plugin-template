@@ -5,7 +5,7 @@ declare(strict_types=1);
 use Isolated\Symfony\Component\Finder\Finder;
 
 return [
-  'prefix'                     => 'PSPT',
+  'prefix'                     => 'WPPT',
   'finders'                    => [
     Finder::create()
       ->files()

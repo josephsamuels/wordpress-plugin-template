@@ -12,3 +12,6 @@
 /builds
 /public/assets
 *.zip
+
+# NPM
+package.lock
