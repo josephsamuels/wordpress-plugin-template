@@ -1,5 +1,9 @@
 #!/bin/bash
 
+if [ $# -ne 2 ]; then
+  echo "Requires two parameters. Abbreviation and Namespace."
+  exit 1
+fi
 
 LOWER_ABBR=$(tr '[:upper:]' '[:lower:]' <<< "$1")
 UPPER_ABBR=$(tr '[:lower:]' '[:upper:]' <<< "$1")
