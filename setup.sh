@@ -7,7 +7,7 @@ UPPER_ABBR=$(tr '[:lower:]' '[:upper:]' <<< "$1")
 NAMESPACE=$2
 
 function updateCode {
-  # grep -rl "$1" . | xargs sed -i "s/$1/$2/g"
+  grep -rl "$1" --exclude=setup.sh * | xargs sed -i "s/$1/$2/g"
 }
 
 updateCode "WPPT" "${UPPER_ABBR}"
