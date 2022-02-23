@@ -1,17 +1,14 @@
 #!/bin/bash
 
-if [ $# -ne 2 ]; then
-  echo "Requires two parameters. Abbreviation and Namespace."
-  exit 1
-fi
+read -p 'Plugin Namespace: ' NAMESPACE
 
-LOWER_ABBR=$(tr '[:upper:]' '[:lower:]' <<< "$1")
-UPPER_ABBR=$(tr '[:lower:]' '[:upper:]' <<< "$1")
+UPPER_ABBR=$(echo $NAMESPACE | sed 's/[a-z]*//g')
+LOWER_ABBR=$(tr '[:upper:]' '[:lower:]' <<< "$UPPER_ABBR")
 
-NAMESPACE=$2
+echo $LOWER_ABBR
 
 function updateCode {
-  grep -rl "$1" --exclude=setup.sh * | xargs sed -i "s/$1/$2/g"
+  grep -rl "$1" --exclude=setup.sh * | xargs sed -i '' "s/$1/$2/g"
 }
 
 updateCode "WPPT" "${UPPER_ABBR}"
